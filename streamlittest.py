@@ -24,4 +24,3 @@ for uploaded_file in importArea:
     fig.show()
     st.bar_chart(volunteerSchool, x="School", y="School Count", width=2000, height=600)
     #testing
-    #st.lmao
