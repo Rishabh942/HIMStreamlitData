@@ -20,7 +20,7 @@ for uploaded_file in importArea:
     volunteerSchool = volunteerSchool.sort_values('School Count', ascending=True).reset_index()
     st.write(volunteerSchool)
     schoolChart = px.data.gapminder()
-    fig = px.bar(schoolChart, x='School', y='School Count')
-    fig.show()
+    #fig = px.bar(schoolChart, x='School', y='School Count')
+    #fig.show()
     st.bar_chart(volunteerSchool, x="School", y="School Count", width=2000, height=600)
     #testing
