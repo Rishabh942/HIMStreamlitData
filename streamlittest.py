@@ -132,6 +132,6 @@ for uploaded_file in importArea:
 
     # Combine the chart and labels
     chart = (bars + text).properties(
-        title='Distribution of Grades'
+        title='Distribution Of Grade In This Event:'
     ).configure_axis(labelFontSize=16, titleFontSize=18).configure_title(fontSize=24)
     st.altair_chart(chart)
