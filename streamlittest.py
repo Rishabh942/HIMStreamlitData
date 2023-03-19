@@ -22,7 +22,7 @@ st.image("oaklandtutorial.png")
 st.write("Now, click on the browse button on the sidebar to the left of this and locate your downloaded CSV file.")
 st.image("oaklandbrowse.png")
 st.write("That's it! Now the data you've imported has been visualized in graphs and maps for you.")
-st.write("_Note: This app has not been tested with a wide variety of event spreadsheets and errors may occur. You can email me at rishabh.mahesh@heartinmotion.org or reach out to me on WorkChat(Rishabh Mahesh)._")
+st.write("_Note: This app has not been tested with a wide variety of event spreadsheets and errors may occur. You can email me at rishabh.mahesh@heartinmotion.org or reach out to me on WorkChat(Rishabh Mahesh) if you have any questions, concerns, or feedback._")
 importArea = st.sidebar.file_uploader("Enter the CSV file here for analysis!", type=["csv"], accept_multiple_files=True)
 for uploaded_file in importArea:
     if uploaded_file is not None:
