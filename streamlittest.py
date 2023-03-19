@@ -12,11 +12,13 @@ from geopy.geocoders import Nominatim
 from datetime import datetime
 #locator = Nominatim(user_agent="testing", timeout=20)
 nomi = pgeocode.Nominatim('us')
-st.title("Test CSV import data website")
+st.title("HIM Event Data Breakdown")
+st.write("This app uses the Google Sheets event data of volunteers to provide analysis on HIM and its impacts on parts of the Bay Area compared to others.")
 importArea = st.sidebar.file_uploader("Enter the CSV file here for analysis!", type=["csv"], accept_multiple_files=True)
 for uploaded_file in importArea:
     if uploaded_file is not None:
         maindf = pd.read_csv(uploaded_file)
+    st.header("Event Dataset")
     st.write(maindf)
     maindf = maindf.drop_duplicates(subset=["Volunteer Name"], keep = 'last')
     volunteerSchool = maindf[['School']].copy()
@@ -133,8 +135,9 @@ for uploaded_file in importArea:
     ).encode(text='Count:Q')
 
     # Combine the chart and labels
+    st.header("Grade Distribution of Event Volunteers")
     chart = (bars + text).properties(
-        title='Distribution Of Grade In This Event:'
+        title=''
     ).configure_axis(labelFontSize=16, titleFontSize=18).configure_title(fontSize=24)
     st.altair_chart(chart)
     
