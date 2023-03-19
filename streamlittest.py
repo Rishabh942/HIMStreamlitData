@@ -24,10 +24,10 @@ for uploaded_file in importArea:
     volunteerSchool['School Count'] = volunteerSchool.groupby('School')['School'].transform('size')
     volunteerSchool = volunteerSchool.drop_duplicates()
     volunteerSchool = volunteerSchool.sort_values('School Count', ascending=True).reset_index()
-    st.write(volunteerSchool)
     #schoolChart = px.data.gapminder()
     #fig = px.bar(schoolChart, x='School', y='School Count')
     #fig.show()
+    st.header("School Distribution of Event Volunteers")
     st.bar_chart(volunteerSchool, x="School", y="School Count", width=2000, height=600)
     #
     #def location_info(x ='San Francisco School of the Art'):
@@ -56,8 +56,10 @@ for uploaded_file in importArea:
         zipLatList.append(query["latitude"])
         zipLongList.append(query["longitude"])
     #st.write(zipList)
+    st.header("Location Distribution of Event Volunteers")
     zipData = pd.DataFrame({'latitude':zipLatList, 'longitude':zipLongList})
     st.map(zipData)
+    st.write("_None of this data is based off of addresses, but rather zip codes, so personal information is kept safe._")
     seniorCount = 0
     juniorCount = 0
     sophomoreCount = 0
@@ -135,3 +137,4 @@ for uploaded_file in importArea:
         title='Distribution Of Grade In This Event:'
     ).configure_axis(labelFontSize=16, titleFontSize=18).configure_title(fontSize=24)
     st.altair_chart(chart)
+    
